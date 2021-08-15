@@ -28,15 +28,15 @@ class Graph {
     }
 
     drawGrid(){
-        let horizontalSpacing = this.dimensions.height / 6;
-        let verticalSpacing = this.dimensions.width / 8;
+        let horizontalSpacing = this.dimensions.height / 12;
+        let verticalSpacing = this.dimensions.width / 16;
         let horizontalMid = this.dimensions.height /2;
         let verticalMid = this.dimensions.width /2;
 
         this.ctx.strokeStyle = "grey";
         this.ctx.lineWidth = 0.5;
 
-        for (let i = -4; i<= 4; i++){
+        for (let i = -8; i<= 8; i++){
             //Drawing vertical grids
             this.ctx.beginPath();
             this.ctx.moveTo(verticalSpacing*i + verticalMid, 0);
@@ -48,7 +48,7 @@ class Graph {
 
         }
         
-        for (let i = -3; i<=3; i++){
+        for (let i = -6; i<=6; i++){
             //Drawing horizontal grids
             this.ctx.beginPath();
             this.ctx.moveTo(0, horizontalSpacing*i + horizontalMid);
@@ -65,8 +65,8 @@ class Graph {
         this.ctx.lineWidth = 5;
 
         //Converting canvas dimension to coordinate dimension
-        start = [this.dimensions.width /2 + start[0]*100, this.dimensions.height /2 - start[1]*100];
-        end = [this.dimensions.width /2 + end[0]*100, this.dimensions.height /2 - end[1]*100];
+        start = [this.dimensions.width /2 + start[0]*50, this.dimensions.height /2 - start[1]*50];
+        end = [this.dimensions.width /2 + end[0]*50, this.dimensions.height /2 - end[1]*50];
 
         this.ctx.beginPath();
         this.ctx.moveTo(start[0], start[1]);
@@ -84,9 +84,9 @@ class Graph {
             let func = equation.value;
             const node = math.parse(func);
             const code = node.compile();
-            let startY = code.evaluate({x: -4});
-            let endY = code.evaluate({x: 4});
-            this.drawLine([-4, startY],[4,endY]);
+            let startY = code.evaluate({x: -8});
+            let endY = code.evaluate({x: 8});
+            this.drawLine([-8, startY],[8,endY]);
         })
 
         reset.addEventListener("click", ()=>{
