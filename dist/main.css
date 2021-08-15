@@ -89,3 +89,9 @@ button {
 .regen-star {
   cursor: pointer;
 }
+
+.left-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
