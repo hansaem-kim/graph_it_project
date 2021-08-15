@@ -25,7 +25,7 @@ class Graph {
         this.ctx.moveTo(0, this.dimensions.height/2);
         this.ctx.lineTo(this.dimensions.width, this.dimensions.height/2);
         this.ctx.stroke();
-    }
+    };
 
     drawGrid(){
         let horizontalSpacing = this.dimensions.height / 12;
@@ -46,7 +46,7 @@ class Graph {
             //Making horizontal labels
             this.ctx.fillText(i.toString(), verticalSpacing*i + verticalMid + 3, horizontalMid + 12);
 
-        }
+        };
         
         for (let i = -6; i<=6; i++){
             //Drawing horizontal grids
@@ -57,8 +57,8 @@ class Graph {
 
             //Making vertical labels
             if (i!==0) this.ctx.fillText(-1*i.toString(), verticalMid + 5, horizontalSpacing*i + horizontalMid -3);
-        }
-    }
+        };
+    };
 
     drawLine(start,end){
         this.ctx.strokeStyle = "rgb(128, 206, 214)";
@@ -77,7 +77,7 @@ class Graph {
     calculateFunction(){
         let equation = document.querySelector("#equation");
         let create = document.querySelector("#create-btn");
-        let reset = document.querySelector("#reset-btn")
+        let reset = document.querySelector("#reset-btn");
 
         //evaluate the equation and create the line when 'create' button is clicked.
         create.addEventListener("click", ()=>{
@@ -87,14 +87,14 @@ class Graph {
             let startY = code.evaluate({x: -8});
             let endY = code.evaluate({x: 8});
             this.drawLine([-8, startY],[8,endY]);
-        })
+        });
 
         reset.addEventListener("click", ()=>{
             this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
             this.drawAxis();
             this.drawGrid();
             equation.value = "";
-        })
+        });
 
         
 

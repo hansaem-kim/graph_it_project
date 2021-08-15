@@ -1,3 +1,4 @@
+import Graph from "./graph.js"
 
 class Star {
     constructor(canvas){
@@ -5,6 +6,7 @@ class Star {
         this.ctx = canvas.getContext("2d");
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.generateStars();
+        this.regenerateStars();
     }
 
     generateStars(){
@@ -19,10 +21,25 @@ class Star {
         }
 
         starPos.forEach(pos => {
-            this.ctx.drawImage(img, pos[0]*50 -10, pos[1]*50 -10, 20, 20)
+            this.ctx.drawImage(img, pos[0]*50 -10, pos[1]*50 -10, 20, 20);
         })
-
     }
+
+    regenerateStars(){
+        let reset = document.querySelector(".regen-star");
+        let equation = document.querySelector("#equation");
+
+        reset.addEventListener("click", ()=>{
+            this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
+            const graph = new Graph(this.canvas);
+            graph.drawAxis();
+            graph.drawGrid();
+            equation.value = "";
+            this.generateStars();
+
+        })
+    }
+
 }
 
 export default Star;
