@@ -3,12 +3,14 @@
   \*************************************************************************************************************************************/
 body {
   margin: 20px;
-  background-color: #d5f4e6;
+  background-color: #d5e1df;
 }
 
 h1 {
   color: #618685;
   font-size: 3rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 
 .game-title {
@@ -24,7 +26,7 @@ h1 {
   margin-left: 30px;
   padding: 0px 18px;
   display: flex;
-  background-color: #80ced6;
+  background-color: #618685;
   border-radius: 50%;
   align-items: center;
 }
@@ -37,6 +39,25 @@ h1 {
 
 canvas {
   background-color: white;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.middle-ct {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  padding: 5px;
+}
+
+.fab {
+  color: black;
 }
 
 .input {
