@@ -30,7 +30,7 @@ To win the game, a player must catch every star on the graph. A player can type 
 ###	Weekend
 * Build logics to take an input from user and render its graphs on the screen.
 ###	Monday
-* Create “instruction”, “create”, and “logic” buttons.
+* Create “instruction”, “create”, and “reset” buttons.
 ###	Tuesday
 * Build logics for car movements and star generation.
 ###	Wednesday
