@@ -6,7 +6,9 @@ class Graph {
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.drawAxis();
         this.drawGrid();
+        this.calculateFunction();
         this.drawLine([-1,1],[3,2]);
+        
     }
 
     drawAxis(){
@@ -73,7 +75,16 @@ class Graph {
     }
 
     calculateFunction(){
-        
+        let equation = document.querySelector("#equation");
+        let create = document.querySelector("#create-btn");
+
+        create.addEventListener("click", ()=>{
+            let func = equation.value;
+            console.log(func);
+
+
+        })
+
     }
 
 }
