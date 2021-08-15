@@ -12,6 +12,7 @@ class Graph {
 
     drawAxis(){
         this.ctx.strokeStyle = "black";
+        this.ctx.lineWidth = 1;
 
         //Drawing Vertical Axis
         this.ctx.beginPath();
@@ -76,7 +77,9 @@ class Graph {
     calculateFunction(){
         let equation = document.querySelector("#equation");
         let create = document.querySelector("#create-btn");
+        let reset = document.querySelector("#reset-btn")
 
+        //evaluate the equation and create the line when 'create' button is clicked.
         create.addEventListener("click", ()=>{
             let func = equation.value;
             const node = math.parse(func);
@@ -85,6 +88,18 @@ class Graph {
             let endY = code.evaluate({x: 4});
             this.drawLine([-4, startY],[4,endY]);
         })
+
+        reset.addEventListener("click", ()=>{
+            this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
+            this.drawAxis();
+            this.drawGrid();
+        })
+
+        
+
+        
+
+
 
     }
 
