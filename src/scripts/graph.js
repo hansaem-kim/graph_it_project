@@ -1,3 +1,4 @@
+import Star from "./star.js"
 
 class Graph {
     constructor(canvas){
@@ -77,7 +78,6 @@ class Graph {
     calculateFunction(){
         let equation = document.querySelector("#equation");
         let create = document.querySelector("#create-btn");
-        let reset = document.querySelector("#reset-btn");
 
         //evaluate the equation and create the line when 'create' button is clicked.
         create.addEventListener("click", ()=>{
@@ -89,12 +89,7 @@ class Graph {
             this.drawLine([-8, startY],[8,endY]);
         });
 
-        reset.addEventListener("click", ()=>{
-            this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
-            this.drawAxis();
-            this.drawGrid();
-            equation.value = "";
-        });
+
 
         
 
