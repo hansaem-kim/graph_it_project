@@ -7,7 +7,6 @@ class Graph {
         this.drawAxis();
         this.drawGrid();
         this.calculateFunction();
-        this.drawLine([-1,1],[3,2]);
         
     }
 
@@ -80,9 +79,11 @@ class Graph {
 
         create.addEventListener("click", ()=>{
             let func = equation.value;
-            console.log(func);
-
-
+            const node = math.parse(func);
+            const code = node.compile();
+            let startY = code.evaluate({x: -4});
+            let endY = code.evaluate({x: 4});
+            this.drawLine([-4, startY],[4,endY]);
         })
 
     }
