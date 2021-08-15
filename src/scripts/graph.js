@@ -6,6 +6,7 @@ class Graph {
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.drawAxis();
         this.drawGrid();
+        this.drawLine([-1,1],[3,2]);
     }
 
     drawAxis(){
@@ -55,6 +56,24 @@ class Graph {
             //Making vertical labels
             if (i!==0) this.ctx.fillText(-1*i.toString(), verticalMid + 5, horizontalSpacing*i + horizontalMid -3);
         }
+    }
+
+    drawLine(start,end){
+        this.ctx.strokeStyle = "red";
+        this.ctx.lineWidth = 5;
+
+        //Converting canvas dimension to coordinate dimension
+        start = [this.dimensions.width /2 + start[0]*100, this.dimensions.height /2 - start[1]*100];
+        end = [this.dimensions.width /2 + end[0]*100, this.dimensions.height /2 - end[1]*100];
+
+        this.ctx.beginPath();
+        this.ctx.moveTo(start[0], start[1]);
+        this.ctx.lineTo(end[0], end[1]);
+        this.ctx.stroke();
+    }
+
+    calculateFunction(){
+        
     }
 
 }
