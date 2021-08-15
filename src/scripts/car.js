@@ -7,7 +7,9 @@ class Car {
         
     }
 
-    
+    moveCar(){
+        //make car button invisible
+    }
 
 
 
