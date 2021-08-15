@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
     <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
@@ -13,13 +14,28 @@
 </head>
 
 <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
-    <form>
-        <label for="equation"><strong>Equation:</strong>  <em>y =</em></label>
-        <input id="equation" type="text">
-        <button id="create-btn" type='button'>Create</button>
-        <button id="reset-btn" type='button'>Reset</button>
-    </form>
+    <div class="game-title">
+        <h1>Graph It!</h1>
+        <div class="instruction">?</div>
+    </div>
+    
+
+    <div class="game-contents">
+        <div class = "canvas-div"> 
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+        
+        <div class="input">
+            <form>
+                <label for="equation"><strong>Equation:</strong>  <em>y =</em></label>
+                <input id="equation" type="text">
+                <button id="create-btn" type='button'>Create</button>
+                <button id="reset-btn" type='button'>Reset</button>
+            </form>
+        </div>
+
+    </div>
+
 
 </body>
 

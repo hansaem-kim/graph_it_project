@@ -61,7 +61,7 @@ class Graph {
     }
 
     drawLine(start,end){
-        this.ctx.strokeStyle = "red";
+        this.ctx.strokeStyle = "rgb(128, 206, 214)";
         this.ctx.lineWidth = 5;
 
         //Converting canvas dimension to coordinate dimension
@@ -93,6 +93,7 @@ class Graph {
             this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
             this.drawAxis();
             this.drawGrid();
+            equation.value = "";
         })
 
         

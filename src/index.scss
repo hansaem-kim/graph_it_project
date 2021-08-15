@@ -1,0 +1,65 @@
+body {
+    margin: 20px;
+    background-color: #d5f4e6;
+}
+
+h1{
+    color: #618685;
+    font-size: 3rem;
+}
+
+.game-title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.instruction {
+    color: #fefbd8;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: 30px;
+    padding: 0px 18px;
+    display: flex;
+    background-color: #80ced6;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.canvas-div {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+canvas{
+    background-color: white;
+}
+
+.input {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+form {
+    color: #618685;
+}
+
+button {
+    background-color: #618685;
+    color: white;
+    border-style: none;
+    padding: 3px;
+    border-radius: 10%;
+}
