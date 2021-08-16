@@ -74,6 +74,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         x += dx;
         y += dy;
+    };
+
+    const popup = document.querySelector("#popup");
+    const instructionButton = document.querySelector(".instruction-btn");
+    const closePopup = document.querySelector("#closePopup");
+    
+    instructionButton.onclick = function() {
+        popup.classList.remove("invisible");
+        popup.getElementsByClassName.display = "block";
+    }
+
+    closePopup.onclick = function() {
+        popup.classList.add("invisible");
     }
 
 })
+

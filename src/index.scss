@@ -16,7 +16,7 @@ h1{
     justify-content: center;
 }
 
-.instruction {
+.instruction-btn {
     color: #fefbd8;
     font-weight: bold;
     font-size: 1.5rem;
@@ -26,6 +26,7 @@ h1{
     background-color: #014127;
     border-radius: 50%;
     align-items: center;
+    cursor: pointer;
 }
 
 .canvas-div {
@@ -105,4 +106,8 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.invisible {
+    display: none;
 }
