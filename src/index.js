@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //move car along the line.
     let carButton = document.querySelector("#car-img");
+    
     carButton.addEventListener("click", ()=>{
 
         car.startCar();
@@ -58,8 +59,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
         star.regenerateStars();
         graph.drawLine([-8, startY],[8,endY]);
 
-        const carImg = document.getElementById("car-img");
-        car.ctx.drawImage(carImg, x, y-30, 60, 60);
+        let dx = (graph.endPos[0] - graph.startPos[0]);
+        let dy = (graph.endPos[1] - graph.startPos[1]);
+
+        let angle = car.getAngle(dx,dy);
+
+        const carImg = document.getElementById("car-img");        
+
+        car.ctx.save();
+        car.ctx.translate(x, y);
+        car.ctx.rotate(angle);
+        car.ctx.translate(-carImg.width/2, -carImg.height/2);
+        car.ctx.drawImage(carImg, 0, 0, 60, 60);
+        car.ctx.restore();
 
         star.starPos.forEach((pos,index)=>{
             if (car.getDistance(x,y,pos[0]*50,pos[1]*50) <= 5.33){
@@ -71,11 +83,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
         });
         
-        let dx = (graph.endPos[0] - graph.startPos[0])/170;
-        let dy = (graph.endPos[1] - graph.startPos[1])/170;
-
-        x += dx;
-        y += dy;
+        x += dx/200;
+        y += dy/200;
     };
 
     const popup = document.querySelector("#popup");

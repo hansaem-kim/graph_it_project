@@ -19,6 +19,10 @@ class Car {
         return Math.sqrt(Math.pow(dx,2) + Math.pow(dy,2));
     }
 
+    getAngle(dx,dy){
+        return Math.atan(dy/dx);
+    }
+
 }
 
 export default Car;
