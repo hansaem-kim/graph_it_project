@@ -79,15 +79,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const popup = document.querySelector("#popup");
     const instructionButton = document.querySelector(".instruction-btn");
     const closePopup = document.querySelector("#closePopup");
+    const background = document.querySelectorAll("body > div:not(#popup)");
     
     instructionButton.onclick = function() {
         popup.classList.remove("invisible");
-        popup.getElementsByClassName.display = "block";
-    }
+        popup.classList.add("visible-popup");
+        background.forEach (ele=>{
+            ele.classList.add("filter");
+        });
+        
+    };
 
     closePopup.onclick = function() {
         popup.classList.add("invisible");
-    }
+        popup.classList.remove("visible-popup");
+        background.forEach (ele=>{
+            ele.classList.remove("filter");
+        });
+    };
 
 })
 

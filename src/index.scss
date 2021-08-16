@@ -10,6 +10,12 @@ h1{
     font-weight: bold;
 }
 
+h3{
+    color: #014127;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 .game-title {
     margin-bottom: 20px;
     display: flex;
@@ -110,4 +116,24 @@ button {
 
 .invisible {
     display: none;
+}
+
+.visible-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 200px;
+    right: 850px;
+    border: solid 3px #618685;
+    width: 200px;
+    padding: 10px;
+    z-index: 1;
+    background-color: #F7F7F7;
+}
+
+.filter {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
 }
