@@ -58,13 +58,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
         star.regenerateStars();
         graph.drawLine([-8, startY],[8,endY]);
 
-        const carImg = document.getElementById("car-img")
+        const carImg = document.getElementById("car-img");
         car.ctx.drawImage(carImg, x, y-30, 60, 60);
 
         star.starPos.forEach((pos,index)=>{
             if (car.getDistance(x,y,pos[0]*50,pos[1]*50) <= 5.33){
                 starSound.play();
-                debugger;
                 star.starPos.splice(index, 1);
                 if (star.starPos.length === 0) {
                     alert("Great! You got all stars!");
