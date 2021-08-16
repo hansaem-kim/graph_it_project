@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let reset = document.querySelector("#reset-btn");
     let create = document.querySelector("#create-btn");
 
-
     //only clear graphs not stars.
     reset.addEventListener("click", ()=>{
         graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
@@ -49,19 +48,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //car move animation.
     function moveCar(){
-        if (x<800) requestAnimationFrame(moveCar);
+        if (x<900) requestAnimationFrame(moveCar);
 
         car.ctx.clearRect(0,0, car.dimensions.width, car.dimensions.height);
         graph.drawAxis();
         graph.drawGrid();
         equation.value = "";
         star.regenerateStars();
-        debugger;
         graph.drawLine([-8, startY],[8,endY]);
 
         const carImg = document.getElementById("car-img")
         car.ctx.drawImage(carImg, x, y-30, 60, 60);
 
+        star.starPos.forEach(pos=>{
+            if (car.getDistance(x,y,pos[0]*50,pos[1]*50) <= 5.33){
+                star.starPos.shift();
+                if (star.starPos.length === 0) {
+                    alert("got all stars");
+                }
+            }
+        });
+        
         let dx = (graph.endPos[0] - graph.startPos[0])/150;
         let dy = (graph.endPos[1] - graph.startPos[1])/150;
 
