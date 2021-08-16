@@ -36,6 +36,7 @@ h1{
 
 canvas{
     background-color: white;
+    border: solid 3px #618685;
 }
 
 .nav-link {
@@ -87,6 +88,7 @@ button {
     border-style: none;
     padding: 3px;
     border-radius: 10%;
+    cursor: pointer;
 }
 
 .regen-star {

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if (car.getDistance(x,y,pos[0]*50,pos[1]*50) <= 5.33){
                 star.starPos.shift();
                 if (star.starPos.length === 0) {
-                    alert("got all stars");
+                    alert("Great! You got all stars!");
                 }
             }
         });
