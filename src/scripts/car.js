@@ -7,10 +7,10 @@ class Car {
         
     }
 
-    moveCar(){
+    startCar(){
         //make car button invisible
+        document.getElementById("car-img").style.visibility = 'hidden';
     }
-
-
-
 }
+
+export default Car;

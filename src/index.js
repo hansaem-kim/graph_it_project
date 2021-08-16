@@ -1,13 +1,22 @@
 import Graph from "./scripts/graph.js";
 import Star from "./scripts/star.js";
+import Car from "./scripts/car.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const canvas = document.getElementById('canvas');
     const graph = new Graph(canvas);
     const star = new Star(canvas);
+    const car = new Car(canvas);
+
+    let x = 0;
+    let y = 0;
+    let startY = 0;
+    let endY = 0;
     
     let equation = document.querySelector("#equation");
     let reset = document.querySelector("#reset-btn");
+    let create = document.querySelector("#create-btn");
+
 
     //only clear graphs not stars.
     reset.addEventListener("click", ()=>{
@@ -17,5 +26,47 @@ document.addEventListener("DOMContentLoaded", ()=>{
         equation.value = "";
         star.regenerateStars();
     });
+
+    //drawing line on the graph.
+    create.addEventListener("click", ()=>{
+        let func = equation.value;
+        const node = math.parse(func);
+        const code = node.compile();
+        startY = code.evaluate({x: -8});
+        endY = code.evaluate({x: 8});
+        graph.drawLine([-8, startY],[8,endY]);
+        x = graph.startPos[0];
+        y = graph.startPos[1];
+    });
+
+    //move car along the line.
+    let carButton = document.querySelector("#car-img");
+    carButton.addEventListener("click", ()=>{
+
+        car.startCar();
+        moveCar();
+    });
+
+    //car move animation.
+    function moveCar(){
+        if (x<800) requestAnimationFrame(moveCar);
+
+        car.ctx.clearRect(0,0, car.dimensions.width, car.dimensions.height);
+        graph.drawAxis();
+        graph.drawGrid();
+        equation.value = "";
+        star.regenerateStars();
+        debugger;
+        graph.drawLine([-8, startY],[8,endY]);
+
+        const carImg = document.getElementById("car-img")
+        car.ctx.drawImage(carImg, x, y-30, 60, 60);
+
+        let dx = (graph.endPos[0] - graph.startPos[0])/150;
+        let dy = (graph.endPos[1] - graph.startPos[1])/150;
+
+        x += dx;
+        y += dy;
+    }
 
 })

@@ -5,9 +5,11 @@ class Graph {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
         this.dimensions = {height: canvas.height, width: canvas.width};
+        this.startPos = [];
+        this.endPos = [];
         this.drawAxis();
         this.drawGrid();
-        this.calculateFunction();
+        // this.calculateFunction();
         
     }
 
@@ -66,12 +68,12 @@ class Graph {
         this.ctx.lineWidth = 5;
 
         //Converting canvas dimension to coordinate dimension
-        start = [this.dimensions.width /2 + start[0]*50, this.dimensions.height /2 - start[1]*50];
-        end = [this.dimensions.width /2 + end[0]*50, this.dimensions.height /2 - end[1]*50];
+        this.startPos = [this.dimensions.width /2 + start[0]*50, this.dimensions.height /2 - start[1]*50];
+        this.endPos = [this.dimensions.width /2 + end[0]*50, this.dimensions.height /2 - end[1]*50];
 
         this.ctx.beginPath();
-        this.ctx.moveTo(start[0], start[1]);
-        this.ctx.lineTo(end[0], end[1]);
+        this.ctx.moveTo(this.startPos[0], this.startPos[1]);
+        this.ctx.lineTo(this.endPos[0], this.endPos[1]);
         this.ctx.stroke();
     }
 
@@ -80,14 +82,14 @@ class Graph {
         let create = document.querySelector("#create-btn");
 
         //evaluate the equation and create the line when 'create' button is clicked.
-        create.addEventListener("click", ()=>{
-            let func = equation.value;
-            const node = math.parse(func);
-            const code = node.compile();
-            let startY = code.evaluate({x: -8});
-            let endY = code.evaluate({x: 8});
-            this.drawLine([-8, startY],[8,endY]);
-        });
+        // create.addEventListener("click", ()=>{
+        //     let func = equation.value;
+        //     const node = math.parse(func);
+        //     const code = node.compile();
+        //     let startY = code.evaluate({x: -8});
+        //     let endY = code.evaluate({x: 8});
+        //     this.drawLine([-8, startY],[8,endY]);
+        // });
 
 
 

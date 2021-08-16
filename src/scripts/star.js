@@ -1,4 +1,5 @@
 import Graph from "./graph.js"
+import Car from "./graph.js"
 
 class Star {
     constructor(canvas){
@@ -47,7 +48,7 @@ class Star {
             graph.drawGrid();
             equation.value = "";
             this.generateStars();
-
+            document.getElementById("car-img").style.visibility = 'visible';
         })
     }
 
