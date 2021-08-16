@@ -91,18 +91,7 @@ class Graph {
         //     this.drawLine([-8, startY],[8,endY]);
         // });
 
-
-
-        
-
-        
-
-
-
     }
-
 }
-
-
 
 export default Graph;
