@@ -1,12 +1,12 @@
 body {
     margin: 20px;
-    background-color: #d5e1df;
+    background-color: #F7F7F7;
+    font-family: 'Orbitron', sans-serif;
 }
 
 h1{
-    color: #618685;
+    color: #014127;
     font-size: 3rem;
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
@@ -23,7 +23,7 @@ h1{
     margin-left: 30px;
     padding: 0px 18px;
     display: flex;
-    background-color: #618685;
+    background-color: #014127;
     border-radius: 50%;
     align-items: center;
 }
@@ -89,6 +89,7 @@ button {
     padding: 3px;
     border-radius: 10%;
     cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .regen-star {
