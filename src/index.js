@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const star = new Star(canvas);
     const car = new Car(canvas);
 
+    let starSound = new Audio("./src/sounds/coin.wav")
     let x = 0;
     let y = 0;
     let startY = 0;
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //car move animation.
     function moveCar(){
-        if (x<900) requestAnimationFrame(moveCar);
+        if (x<800) requestAnimationFrame(moveCar);
 
         car.ctx.clearRect(0,0, car.dimensions.width, car.dimensions.height);
         graph.drawAxis();
@@ -60,17 +61,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const carImg = document.getElementById("car-img")
         car.ctx.drawImage(carImg, x, y-30, 60, 60);
 
-        star.starPos.forEach(pos=>{
+        star.starPos.forEach((pos,index)=>{
             if (car.getDistance(x,y,pos[0]*50,pos[1]*50) <= 5.33){
-                star.starPos.shift();
+                starSound.play();
+                debugger;
+                star.starPos.splice(index, 1);
                 if (star.starPos.length === 0) {
                     alert("Great! You got all stars!");
                 }
             }
         });
         
-        let dx = (graph.endPos[0] - graph.startPos[0])/150;
-        let dy = (graph.endPos[1] - graph.startPos[1])/150;
+        let dx = (graph.endPos[0] - graph.startPos[0])/170;
+        let dy = (graph.endPos[1] - graph.startPos[1])/170;
 
         x += dx;
         y += dy;
