@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //draw linear equation when create button is pressed.
     function drawGraph(){
-        graph.calculateFunction();
+        graph.evaluateFunction();
     }
 
     create.onclick = function() {drawGraph()};
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     function moveCar(){
         if (graph.posX<800) requestAnimationFrame(moveCar);
 
+        //resetting game board every frame.
         car.ctx.clearRect(0,0, car.dimensions.width, car.dimensions.height);
         score.drawBoard();
         graph.drawAxis();
@@ -78,6 +79,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         car.ctx.drawImage(carImg, 0, 0, 60, 60);
         car.ctx.restore();
 
+        //car & star collision logic
         star.starPos.forEach((pos, index)=>{
             if (car.getDistance(graph.posX, graph.posY, pos[0]*50, pos[1]*50) <= 5.33){
                 starSound.play();
@@ -89,6 +91,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
         });
         
+        //updating position for animation.
         graph.posX += dx/200;
         graph.posY += dy/200;
     };

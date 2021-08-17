@@ -65,6 +65,7 @@ class Graph {
         };
     };
 
+    //draws line given start and end positions.
     drawLine(start,end){
         this.ctx.strokeStyle = "rgb(128, 206, 214)";
         this.ctx.lineWidth = 5;
@@ -79,7 +80,8 @@ class Graph {
         this.ctx.stroke();
     }
 
-    calculateFunction(){
+    //evaluate the given equation and draw line.
+    evaluateFunction(){
         let equation = document.querySelector("#equation");
 
         let func = equation.value;
