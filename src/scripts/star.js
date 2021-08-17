@@ -1,5 +1,6 @@
 import Graph from "./graph.js"
 import Car from "./graph.js"
+import Score from "./score.js";
 
 class Star {
     constructor(canvas){
@@ -8,7 +9,6 @@ class Star {
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.starPos = [];
         this.generateStars();
-        this.resetStars();
     }
 
     generateStars(){
@@ -35,28 +35,24 @@ class Star {
 
     //regenerate stars on same position after clear graph.
     regenerateStars(){
-        const img = document.getElementById("star-img")
+        const img = document.getElementById("star-img");
         this.starPos.forEach(pos => {
             this.ctx.drawImage(img, pos[0]*50 -10, pos[1]*50 -10, 20, 20);
-        })
+        });
     }
 
     //resets entire game
-    resetStars(){
-        let reset = document.querySelector(".regen-star");
+    resetStars(graph, score){
         let equation = document.querySelector("#equation");
 
-        reset.addEventListener("click", ()=>{
-            this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
-            const graph = new Graph(this.canvas);
-            graph.drawAxis();
-            graph.drawGrid();
-            equation.value = "";
-            this.generateStars();
-            document.getElementById("car-img").style.visibility = 'visible';
-        })
+        this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
+        score.drawBoard();
+        graph.drawAxis();
+        graph.drawGrid();
+        equation.value = "";
+        this.generateStars();
+        document.getElementById("car-img").style.visibility = 'visible';
     }
-
 }
 
 export default Star;

@@ -1,3 +1,160 @@
-body{margin:20px;background-color:#f7f7f7;font-family:"Orbitron",sans-serif}h1{color:#014127;font-size:3rem;font-weight:bold}h3{color:#014127;font-size:1.5rem;font-weight:bold;margin-bottom:15px}.game-title{margin-bottom:20px;display:flex;justify-content:center}.instruction-btn{color:#fefbd8;font-weight:bold;font-size:1.5rem;margin-left:30px;padding:0px 18px;display:flex;background-color:#014127;border-radius:50%;align-items:center;cursor:pointer}.canvas-div{margin:10px;display:flex;justify-content:center}canvas{background-color:#fff;border:solid 3px #618685}.nav-link{display:flex;flex-direction:column;justify-content:flex-end}.middle-ct{display:flex;justify-content:center}a{padding:5px}.fab{color:#000}.input{margin:20px;display:flex;justify-content:center}strong{font-weight:bold}em{font-style:italic}form{color:#618685}button{background-color:#618685;color:#fff;border-style:none;padding:3px;border-radius:10%;cursor:pointer;font-family:"Orbitron",sans-serif}.regen-star{cursor:pointer}#car-img{cursor:pointer}.left-div{display:flex;flex-direction:column;justify-content:space-between}.invisible{display:none}.visible-popup{display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;margin:0 auto;bottom:500px;border:solid 3px #618685;width:500px;padding:10px;z-index:1;background-color:#f7f7f7}.filter{filter:blur(5px);-webkit-filter:blur(5px)}#closePopup{margin-top:20px}.instruction{display:flex;flex-direction:column;align-items:center}li{margin-top:10px}.third-instruction{display:flex;align-items:center}span{padding-right:5px;padding-left:5px}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+body {
+  margin: 20px;
+  background-color: #F7F7F7;
+  font-family: "Orbitron", sans-serif;
+}
 
-/*# sourceMappingURL=main.css.map*/
+h1 {
+  color: #014127;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h3 {
+  color: #014127;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.game-title {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.instruction-btn {
+  color: #fefbd8;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 30px;
+  padding: 0px 18px;
+  display: flex;
+  background-color: #014127;
+  border-radius: 50%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.canvas-div {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  background-color: white;
+  border: solid 3px #618685;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.middle-ct {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  padding: 5px;
+}
+
+.fab {
+  color: black;
+}
+
+.input {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+form {
+  color: #618685;
+}
+
+button {
+  background-color: #618685;
+  color: white;
+  border-style: none;
+  padding: 3px;
+  border-radius: 10%;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+}
+
+.regen-star {
+  cursor: pointer;
+}
+
+#car-img {
+  cursor: pointer;
+}
+
+.left-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible-popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  bottom: 500px;
+  border: solid 3px #618685;
+  width: 500px;
+  padding: 10px;
+  z-index: 1;
+  background-color: #F7F7F7;
+}
+
+.filter {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+#closePopup {
+  margin-top: 20px;
+}
+
+.instruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.third-instruction {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  padding-right: 5px;
+  padding-left: 5px;
+}
