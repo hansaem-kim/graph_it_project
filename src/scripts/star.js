@@ -8,7 +8,6 @@ class Star {
         this.ctx = canvas.getContext("2d");
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.starPos = [];
-        this.generateStars();
     }
 
     generateStars(){
