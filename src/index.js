@@ -21,21 +21,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let create = document.querySelector("#create-btn");
     let regen = document.querySelector(".regen-star");
 
+    
+    // regenerate stars to play new game.
     function regenerator(graph, score){
         star.resetStars(graph, score);
     }
 
     regen.onclick = function() {regenerator(graph,score)};
 
-    //only clear graphs not stars.
-    reset.addEventListener("click", ()=>{
-        graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
-        score.drawBoard();
-        graph.drawAxis();
-        graph.drawGrid();
-        equation.value = "";
-        star.regenerateStars();
-    });
+
+    //reset the graph when reset button is pressed.
+    function resetGraph(graph, score){
+        star.regenerateStars(graph, score);
+    }
+
+    reset.onclick = function() {resetGraph(graph, score)};
+
 
     //drawing line on the graph.
     create.addEventListener("click", ()=>{
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         graph.drawAxis();
         graph.drawGrid();
         equation.value = "";
-        star.regenerateStars();
+        star.regenerateStars(graph, score);
         graph.drawLine([-8, startY],[8,endY]);
 
         let dx = (graph.endPos[0] - graph.startPos[0]);

@@ -34,8 +34,16 @@ class Star {
     }
 
     //regenerate stars on same position after clear graph.
-    regenerateStars(){
+    regenerateStars(graph, score){
         const img = document.getElementById("star-img");
+        let equation = document.querySelector("#equation");
+
+        graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
+        score.drawBoard();
+        graph.drawAxis();
+        graph.drawGrid();
+        equation.value = "";
+
         this.starPos.forEach(pos => {
             this.ctx.drawImage(img, pos[0]*50 -10, pos[1]*50 -10, 20, 20);
         });
