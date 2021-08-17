@@ -7,10 +7,12 @@ class Graph {
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.startPos = [];
         this.endPos = [];
+        this.posX = 0;
+        this.posY = 0;
+        this.startY = 0;
+        this.endY = 0;
         this.drawAxis();
         this.drawGrid();
-        // this.calculateFunction();
-        
     }
 
     drawAxis(){
@@ -79,17 +81,15 @@ class Graph {
 
     calculateFunction(){
         let equation = document.querySelector("#equation");
-        let create = document.querySelector("#create-btn");
 
-        //evaluate the equation and create the line when 'create' button is clicked.
-        // create.addEventListener("click", ()=>{
-        //     let func = equation.value;
-        //     const node = math.parse(func);
-        //     const code = node.compile();
-        //     let startY = code.evaluate({x: -8});
-        //     let endY = code.evaluate({x: 8});
-        //     this.drawLine([-8, startY],[8,endY]);
-        // });
+        let func = equation.value;
+        const node = math.parse(func);
+        const code = node.compile();
+        this.startY = code.evaluate({x: -8});
+        this.endY = code.evaluate({x: 8});
+        this.drawLine([-8, this.startY],[8, this.endY]);
+        this.posX = this.startPos[0];
+        this.posY = this.startPos[1];
 
     }
 }
