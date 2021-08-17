@@ -1,4 +1,3 @@
-import Star from "./star.js"
 
 class Graph {
     constructor(canvas){

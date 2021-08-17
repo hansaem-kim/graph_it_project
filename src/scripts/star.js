@@ -1,6 +1,3 @@
-import Graph from "./graph.js"
-import Car from "./graph.js"
-import Score from "./score.js";
 
 class Star {
     constructor(canvas){
