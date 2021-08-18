@@ -208,13 +208,14 @@ span {
   height: 20px;
 }
 
-.playername-div {
+.visible-playername-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   margin: 0 auto;
+  bottom: 500px;
   border: solid 3px #618685;
   width: 300px;
   padding: 10px;
@@ -222,6 +223,10 @@ span {
   background-color: #F7F7F7;
 }
 
-.playername-div label {
+.visible-playername-div label {
   padding: 10px;
+}
+
+#enter-name-btn {
+  margin-top: 10px;
 }

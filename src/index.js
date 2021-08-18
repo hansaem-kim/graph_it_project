@@ -3,6 +3,8 @@ import Star from "./scripts/star.js";
 import Car from "./scripts/car.js";
 import Score from "./scripts/score.js";
 import Time from "./scripts/time.js";
+import TimeAttack from "./scripts/time_attack.js";
+import LeaderBoard from "./scripts/leader_board.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const canvas = document.getElementById('canvas');
@@ -11,6 +13,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const car = new Car();
     const score = new Score(canvas);
     const time = new Time();
+    const timeAttack = new TimeAttack(canvas);
+    const leaderBoard = new LeaderBoard();
+
 
     let starSound = new Audio("./src/sounds/coin.wav")
 
@@ -45,12 +50,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //star timer when stopwatch is pressed.
     function startTimer(){
-        time.startTimer();
+        time.startTimer(timeAttack.askName);
     }
 
     //start timer only when timer is not currently on.
     stopwatch.onclick = function() {
-        if (!time.timerOn) startTimer();
+        if (!time.timerOn) startTimer(timeAttack.askName);
     }
 
 
@@ -131,6 +136,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
             ele.classList.remove("filter");
         });
     };
+
+    const enterButton = document.querySelector("#enter-name-btn");
+
+    function displayAskNameModal(){
+        timeAttack.closeAskname();
+    }
+
+    enterButton.onclick = function() {displayAskNameModal()};
 
 })
 

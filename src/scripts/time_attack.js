@@ -8,7 +8,25 @@ class TimeAttack {
     }
 
     askName(){
-        
+        const playerNameDiv = document.querySelector("#playername-div");
+        const background = document.querySelectorAll("body > div:not(#playername-div)");
+    
+        playerNameDiv.classList.remove("invisible");
+        playerNameDiv.classList.add("visible-playername-div");
+        background.forEach (ele=>{
+            ele.classList.add("filter");
+        });
+    }
+
+    closeAskname() {
+        const playerNameDiv = document.querySelector("#playername-div");
+        const background = document.querySelectorAll("body > div:not(#playername-div)");
+
+        playerNameDiv.classList.add("invisible");
+        playerNameDiv.classList.remove("visible-playername-div");
+        background.forEach (ele=>{
+            ele.classList.remove("filter");
+        });
     }
 
 

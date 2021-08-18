@@ -4,17 +4,19 @@ class Time{
         this.timeLeft = 60;
         this.timer;
         this.timerOn = false;
+        this.timeOver = false;
 
     }
 
-    gameOver(){
+    gameOver(callback){
         clearInterval(this.timer);
-        console.log("time-up");
         this.timeLeft = 60;
         this.timerOn = false;
+        this.timeOver = true;
+        callback();
     }
 
-    startTimer(){
+    startTimer(callback){
         this.timerOn = true;
         let timeCount = document.querySelector("#timer");
         let that = this;
@@ -25,9 +27,9 @@ class Time{
             } else if (that.timeLeft >= 0){
                 timeCount.innerHTML = `00:0${that.timeLeft}`;
             } else {
-                that.gameOver();
+                that.gameOver(callback);
             }
-        }, 100);
+        }, 50);
     }
 
 
