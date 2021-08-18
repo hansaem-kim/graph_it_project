@@ -48,7 +48,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         time.startTimer();
     }
 
-    stopwatch.onclick = function() {startTimer();}
+    //start timer only when timer is not currently on.
+    stopwatch.onclick = function() {
+        if (!time.timerOn) startTimer();
+    }
 
 
     //move car along the line.

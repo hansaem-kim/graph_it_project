@@ -3,6 +3,7 @@ class Time{
     constructor(){
         this.timeLeft = 60;
         this.timer;
+        this.timerOn = false;
 
     }
 
@@ -10,10 +11,11 @@ class Time{
         clearInterval(this.timer);
         console.log("time-up");
         this.timeLeft = 60;
+        this.timerOn = false;
     }
 
     startTimer(){
-        console.log("hello timer")
+        this.timerOn = true;
         let timeCount = document.querySelector("#timer");
         let that = this;
         this.timer = setInterval(function(){
