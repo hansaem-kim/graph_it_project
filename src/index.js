@@ -32,9 +32,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
         timeAttack.timeAttackMode = false;
     }
 
+    // you cannot switch to practice mode during countdown.
     regen.onclick = function() {
-        regenerator(graph,score);
-        time.resetTimer();
+        if (!countdowning){
+            regenerator(graph,score);
+            time.resetTimer();
+        }
     };
 
 
@@ -175,25 +178,30 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
     }
 
-    function countDown(){
-        let countDownText = document.querySelector("#countdown-text");
-        countDownText.classList.remove("invisible");
+    let counter;
+    let countdowning = false;
+    let countDownText = document.querySelector("#countdown-text");
     
+    function countDown(){
+        countdowning = true;
+        countDownText.classList.remove("invisible");
         let count = 3;
 
         graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
-        let counter = setInterval(()=> {
+        counter = setInterval(()=> {
             if (count === 0) {
                 countDownText.innerHTML = `Go!`;
                 count -= 1;
             } else if (count === -1){
                 clearInterval(counter);
                 countDownText.classList.add("invisible");
+                countdowning = false;
             } else {
                 countDownText.innerHTML = `${count}`;
                 count -= 1;
             }
         }, 1000);
+        countDownText.innerHTML = '';
     }
 
 })
