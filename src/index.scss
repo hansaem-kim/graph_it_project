@@ -195,7 +195,8 @@ span {
 
 .leader-board-div {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
     color: #014127;
     border: dotted 5px #618685;

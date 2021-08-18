@@ -8,15 +8,15 @@ class Time{
 
     }
 
-    gameOver(callback){
+    gameOver(askName){
         clearInterval(this.timer);
         this.timeLeft = 60;
         this.timerOn = false;
         this.timeOver = true;
-        callback();
+        askName();
     }
 
-    startTimer(callback){
+    startTimer(askName){
         this.timerOn = true;
         let timeCount = document.querySelector("#timer");
         let that = this;
@@ -27,7 +27,7 @@ class Time{
             } else if (that.timeLeft >= 0){
                 timeCount.innerHTML = `00:0${that.timeLeft}`;
             } else {
-                that.gameOver(callback);
+                that.gameOver(askName);
             }
         }, 50);
     }

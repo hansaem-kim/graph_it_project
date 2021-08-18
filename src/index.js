@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 
     //start timer only when timer is not currently on.
+    //display ask-name modal when time is up.
     stopwatch.onclick = function() {
         if (!time.timerOn) startTimer(timeAttack.askName);
     }
@@ -137,13 +138,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
     };
 
+    //close ask-name-modal when enter is pressed
     const enterButton = document.querySelector("#enter-name-btn");
 
-    function displayAskNameModal(){
+    function closeAskNameModal(){
         timeAttack.closeAskname();
     }
 
-    enterButton.onclick = function() {displayAskNameModal()};
+    let point = score.point;
+    function updateLeaderBoard(point){
+        leaderBoard.updateBoard(point);
+    }
+
+    enterButton.onclick = function() {
+        closeAskNameModal();
+        updateLeaderBoard(point);
+    };
 
 })
 
