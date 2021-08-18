@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //reset the graph when reset button is pressed.
     function resetGraph(graph, score){
         star.regenerateStars(graph, score);
+        if (timeAttack.timeAttackMode) score.drawBoard();
     }
 
     reset.onclick = function() {resetGraph(graph, score)};
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     stopwatch.onclick = function() {
         if (!time.timerOn) startTimer(timeAttack.askName);
         timeAttackPlay();
+
     }
 
 
@@ -76,11 +78,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         //resetting game board every frame.
         graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
-        score.drawBoard();
-        graph.drawAxis();
-        graph.drawGrid();
-        equation.value = "";
         star.regenerateStars(graph, score);
+        if (timeAttack.timeAttackMode) score.drawBoard();
         graph.drawLine([-8, graph.startY],[8, graph.endY]);
 
         let dx = (graph.endPos[0] - graph.startPos[0]);
@@ -151,16 +150,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
     enterButton.onclick = function() {
         closeAskNameModal();
         updateLeaderBoard(point);
+        timeAttack.timeAttackMode = false;
     };
 
 
     function timeAttackPlay(){
+        timeAttack.timeAttackMode = true;
         score.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
         star.resetStars(graph, score);
         score.point = 0;
         score.drawBoard();
         
-
     }
 
 })

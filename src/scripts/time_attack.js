@@ -4,7 +4,7 @@ class TimeAttack {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
         this.dimensions = {height: canvas.height, width: canvas.width};
-        this.timeAttackMode = true;
+        this.timeAttackMode = false;
     }
 
     askName(){

@@ -35,7 +35,7 @@ class Star {
         let equation = document.querySelector("#equation");
 
         graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
-        score.drawBoard();
+        // score.drawBoard();
         graph.drawAxis();
         graph.drawGrid();
         equation.value = "";
