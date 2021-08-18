@@ -104,9 +104,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 starSound.play();
                 score.point += 10
                 star.starPos.splice(index, 1);
-                if (star.starPos.length === 0) {
-                    alert("Great! You got all stars!");
-                }
             }
         });
         
