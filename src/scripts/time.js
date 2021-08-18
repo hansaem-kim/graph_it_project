@@ -3,21 +3,24 @@ class Time{
     constructor(){
         this.timeLeft = 60;
         this.timer;
-        this.timerOn = false;
         this.timeOver = false;
 
+    }
+    resetTimer(){
+        let timeCount = document.querySelector("#timer");
+        this.timeLeft = 60;
+        timeCount.innerHTML = `01:00`;
     }
 
     gameOver(askName){
         clearInterval(this.timer);
         this.timeLeft = 60;
-        this.timerOn = false;
         this.timeOver = true;
         askName();
     }
 
     startTimer(askName){
-        this.timerOn = true;
+        // this.timerOn = true;
         let timeCount = document.querySelector("#timer");
         let that = this;
         this.timer = setInterval(function(){

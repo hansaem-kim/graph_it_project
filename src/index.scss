@@ -184,7 +184,7 @@ span {
     font-size: 1.2rem;
     position: relative;
     top: 100px;
-    right: 140px;
+    right: 100px;
 }
 
 .time-left {
@@ -205,7 +205,11 @@ span {
     top: 100px;
     left: 140px;
     height: 400px;
-    width: 200px;
+    width: 250px;
+}
+
+.leader-board-div p {
+    padding: 10px;
 }
 
 .hall-of-fame {

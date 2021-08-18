@@ -28,9 +28,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // regenerate stars to play new game.
     function regenerator(graph, score){
         star.resetStars(graph, score);
+        clearInterval(time.timer);
+        timeAttack.timeAttackMode = false;
     }
 
-    regen.onclick = function() {regenerator(graph,score)};
+    regen.onclick = function() {
+        regenerator(graph,score);
+        time.resetTimer();
+    };
 
 
     //reset the graph when reset button is pressed.
@@ -57,10 +62,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //start timer only when timer is not currently on.
     //display ask-name modal when time is up.
     stopwatch.onclick = function() {
-        if (!time.timerOn) startTimer(timeAttack.askName);
-        score.point = 0;
-        timeAttackPlay();
-
+        if (!timeAttack.timeAttackMode) {
+            startTimer(timeAttack.askName);
+            score.point = 0;
+            timeAttackPlay();
+        } 
     }
 
 
