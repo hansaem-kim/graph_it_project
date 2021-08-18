@@ -6,17 +6,26 @@ class Time{
 
     }
 
-    gameTimer(){
-        let timeCount = document.querySelector("#timer");
-        this.timeLeft = -1;
-        while (this.timeLeft >= 0) {
-            timeCount.innerHTML(this.timeLeft);
-        }
+    gameOver(){
+        clearInterval(this.timer);
+        console.log("time-up");
+        this.timeLeft = 60;
     }
 
     startTimer(){
-        timer = setInterval(this.gameTimer, 1000);
-        this.gameTimer();
+        console.log("hello timer")
+        let timeCount = document.querySelector("#timer");
+        let that = this;
+        this.timer = setInterval(function(){
+            that.timeLeft -= 1;
+            if (that.timeLeft >=10) {
+                timeCount.innerHTML = `00:${that.timeLeft}`;
+            } else if (that.timeLeft >= 0){
+                timeCount.innerHTML = `00:0${that.timeLeft}`;
+            } else {
+                that.gameOver();
+            }
+        }, 100);
     }
 
 

@@ -2,6 +2,7 @@ import Graph from "./scripts/graph.js";
 import Star from "./scripts/star.js";
 import Car from "./scripts/car.js";
 import Score from "./scripts/score.js";
+import Time from "./scripts/time.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     const canvas = document.getElementById('canvas');
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const star = new Star(canvas);
     const car = new Car();
     const score = new Score(canvas);
+    const time = new Time();
 
     let starSound = new Audio("./src/sounds/coin.wav")
 
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let reset = document.querySelector("#reset-btn");
     let create = document.querySelector("#create-btn");
     let regen = document.querySelector(".regen-star");
-
+    let stopwatch = document.querySelector(".stopwatch-div");
 
     // regenerate stars to play new game.
     function regenerator(graph, score){
@@ -40,6 +42,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 
     create.onclick = function() {drawGraph()};
+
+    //star timer when stopwatch is pressed.
+    function startTimer(){
+        time.startTimer();
+    }
+
+    stopwatch.onclick = function() {startTimer();}
 
 
     //move car along the line.
