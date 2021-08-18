@@ -173,7 +173,9 @@ span {
 
 .timer-div {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 10px;
     color: #014127;
     border: dotted 5px #618685;
@@ -184,6 +186,12 @@ span {
     top: 100px;
     right: 140px;
 }
+
+.time-left {
+    border-bottom: groove 3px #618685;
+    padding: 10px;
+}
+
 
 .leader-board-div {
     display: flex;
@@ -197,4 +205,10 @@ span {
     left: 140px;
     height: 400px;
     width: 200px;
+}
+
+.hall-of-fame {
+    border-bottom: groove 3px #618685;
+    padding: 10px;
+    height: 20px;
 }
