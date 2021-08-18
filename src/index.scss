@@ -242,3 +242,16 @@ span {
 #enter-name-btn {
     margin-top: 10px;
 }
+
+#countdown-div {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 500px;
+    right: 10px;
+}
+
+#countdown-text {
+    font-size: 5rem;
+    color: #f8ca00;
+}

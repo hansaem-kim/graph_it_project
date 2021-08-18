@@ -60,14 +60,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 
     //start timer only when timer is not currently on.
+    //start countdown first.
     //display ask-name modal when time is up.
     stopwatch.onclick = function() {
         if (!timeAttack.timeAttackMode) {
-            startTimer(timeAttack.askName);
-            score.point = 0;
-            timeAttackPlay();
-        } 
-    }
+            countDown();
+            setTimeout(function(){
+                startTimer(timeAttack.askName);
+                score.point = 0;
+                timeAttackPlay();
+            }, 4000);
+        };
+    };
 
 
     //move car along the line.
@@ -169,6 +173,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
         star.resetStars(graph, score);
         score.drawBoard();
         
+    }
+
+    function countDown(){
+        let countDownText = document.querySelector("#countdown-text");
+        countDownText.classList.remove("invisible");
+    
+        let count = 3;
+
+        graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
+        let counter = setInterval(()=> {
+            if (count === 0) {
+                countDownText.innerHTML = `Go!`;
+                count -= 1;
+            } else if (count === -1){
+                clearInterval(counter);
+                countDownText.classList.add("invisible");
+            } else {
+                countDownText.innerHTML = `${count}`;
+                count -= 1;
+            }
+        }, 1000);
     }
 
 })
