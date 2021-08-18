@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const canvas = document.getElementById('canvas');
     const graph = new Graph(canvas);
     const star = new Star(canvas);
-    const car = new Car(canvas);
+    const car = new Car();
     const score = new Score(canvas);
 
     let starSound = new Audio("./src/sounds/coin.wav")
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if (graph.posX<800) requestAnimationFrame(moveCar);
 
         //resetting game board every frame.
-        car.ctx.clearRect(0,0, car.dimensions.width, car.dimensions.height);
+        graph.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
         score.drawBoard();
         graph.drawAxis();
         graph.drawGrid();
@@ -72,12 +72,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         const carImg = document.getElementById("car-img");        
 
-        car.ctx.save();
-        car.ctx.translate(graph.posX, graph.posY);
-        car.ctx.rotate(angle);
-        car.ctx.translate(-carImg.width/2, -carImg.height/2);
-        car.ctx.drawImage(carImg, 0, 0, 60, 60);
-        car.ctx.restore();
+        graph.ctx.save();
+        graph.ctx.translate(graph.posX, graph.posY);
+        graph.ctx.rotate(angle);
+        graph.ctx.translate(-carImg.width/2, -carImg.height/2);
+        graph.ctx.drawImage(carImg, 0, 0, 60, 60);
+        graph.ctx.restore();
 
         //car & star collision logic
         star.starPos.forEach((pos, index)=>{

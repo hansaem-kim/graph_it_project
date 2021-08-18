@@ -1,19 +1,22 @@
 
 class Time{
-    constructor(canvas){
-        this.canvas = canvas;
-        this.ctx = canvas.getContext("2d");
-        this.dimensions = {height: canvas.height, width: canvas.width};
+    constructor(){
         this.timeLeft = 60;
+        this.timer;
 
     }
 
     gameTimer(){
-        let timeCount = document.querySelector("");
+        let timeCount = document.querySelector("#timer");
         this.timeLeft = -1;
         while (this.timeLeft >= 0) {
-
+            timeCount.innerHTML(this.timeLeft);
         }
+    }
+
+    startTimer(){
+        timer = setInterval(this.gameTimer, 1000);
+        this.gameTimer();
     }
 
 

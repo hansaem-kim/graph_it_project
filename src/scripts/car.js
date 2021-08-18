@@ -1,10 +1,6 @@
 
 class Car {
-    constructor(canvas){
-        this.canvas = canvas;
-        this.ctx = canvas.getContext("2d");
-        this.dimensions = {height: canvas.height, width: canvas.width};
-        
+    constructor(){
     }
 
     //make car button invisible
