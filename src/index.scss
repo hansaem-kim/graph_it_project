@@ -113,6 +113,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 30px;
 }
 
 .invisible {
@@ -163,9 +164,37 @@ span {
     padding-left: 5px;
 }
 
-.timer-div {
+.time-attack-div {
     position: relative;
     bottom: 220px;
     left: 5px;
     cursor: pointer;
+}
+
+.timer-div {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #014127;
+    border: dotted 5px #618685;
+    height: 100px;
+    width: 200px;
+    font-size: 1.2rem;
+    position: relative;
+    top: 100px;
+    right: 140px;
+}
+
+.leader-board-div {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #014127;
+    border: dotted 5px #618685;
+    font-size: 1.2rem;
+    position: relative;
+    top: 100px;
+    left: 140px;
+    height: 400px;
+    width: 200px;
 }
