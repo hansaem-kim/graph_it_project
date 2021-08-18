@@ -207,3 +207,21 @@ span {
   padding: 10px;
   height: 20px;
 }
+
+.playername-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  border: solid 3px #618685;
+  width: 300px;
+  padding: 10px;
+  z-index: 1;
+  background-color: #F7F7F7;
+}
+
+.playername-div label {
+  padding: 10px;
+}
