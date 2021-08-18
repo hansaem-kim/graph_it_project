@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //display ask-name modal when time is up.
     stopwatch.onclick = function() {
         if (!time.timerOn) startTimer(timeAttack.askName);
+        score.point = 0;
         timeAttackPlay();
 
     }
@@ -109,6 +110,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         //updating position for animation.
         graph.posX += dx/200;
         graph.posY += dy/200;
+
+        //keep playing game if time-attack mode is on
+        if (graph.posX>800 && timeAttack.timeAttackMode) timeAttackPlay();
     };
 
 
@@ -142,14 +146,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
         timeAttack.closeAskname();
     }
 
-    let point = score.point;
     function updateLeaderBoard(point){
         leaderBoard.updateBoard(point);
     }
 
     enterButton.onclick = function() {
         closeAskNameModal();
-        updateLeaderBoard(point);
+        updateLeaderBoard(score.point);
         timeAttack.timeAttackMode = false;
     };
 
@@ -158,7 +161,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         timeAttack.timeAttackMode = true;
         score.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
         star.resetStars(graph, score);
-        score.point = 0;
         score.drawBoard();
         
     }
