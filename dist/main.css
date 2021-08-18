@@ -99,6 +99,8 @@ button {
 
 .regen-star {
   cursor: pointer;
+  position: relative;
+  top: 28px;
 }
 
 #car-img {
@@ -162,7 +164,7 @@ span {
 
 .stopwatch-div {
   position: relative;
-  bottom: 220px;
+  bottom: 190px;
   left: 5px;
   cursor: pointer;
 }
