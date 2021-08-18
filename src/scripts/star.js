@@ -50,7 +50,7 @@ class Star {
         let equation = document.querySelector("#equation");
 
         this.ctx.clearRect(0,0, this.dimensions.width, this.dimensions.height);
-        score.drawBoard();
+        // score.drawBoard();
         graph.drawAxis();
         graph.drawGrid();
         equation.value = "";

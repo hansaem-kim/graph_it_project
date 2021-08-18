@@ -5,7 +5,6 @@ class Score{
         this.ctx = canvas.getContext("2d");
         this.dimensions = {height: canvas.height, width: canvas.width};
         this.point = 0;
-        this.drawBoard();
     }
 
     drawBoard(){

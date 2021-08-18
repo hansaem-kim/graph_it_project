@@ -29,7 +29,7 @@ class Time{
             } else {
                 that.gameOver(askName);
             }
-        }, 50);
+        }, 200);
     }
 
 

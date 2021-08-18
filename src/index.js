@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //display ask-name modal when time is up.
     stopwatch.onclick = function() {
         if (!time.timerOn) startTimer(timeAttack.askName);
+        timeAttackPlay();
     }
 
 
@@ -154,6 +155,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
         closeAskNameModal();
         updateLeaderBoard(point);
     };
+
+
+    function timeAttackPlay(){
+        score.ctx.clearRect(0,0, graph.dimensions.width, graph.dimensions.height);
+        star.resetStars(graph, score);
+        score.point = 0;
+        score.drawBoard();
+        
+
+    }
 
 })
 
