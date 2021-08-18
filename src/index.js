@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
     let starSound = new Audio("./src/sounds/coin.wav")
+    let countdownSound = new Audio("./src/sounds/countdown.mp3")
 
     let equation = document.querySelector("#equation");
     let reset = document.querySelector("#reset-btn");
@@ -67,6 +68,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //display ask-name modal when time is up.
     stopwatch.onclick = function() {
         if (!timeAttack.timeAttackMode) {
+            setTimeout(function(){
+                countdownSound.play();
+            }, 500);
             countDown();
             setTimeout(function(){
                 startTimer(timeAttack.askName);
