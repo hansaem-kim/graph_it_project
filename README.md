@@ -1,7 +1,7 @@
 # Graph It
 
 ## Background
-As a math teacher, I found many students struggling with graphing linear equation. It is very unfortunate, because grahping linear equation is a must-have skill to comprehend not only Algebra 1 but any secondary school math courses. And that is why I decided to make a graphing game!
+As a math teacher, I found many students struggling with graphing linear equation. It is very unfortunate, because graphing linear equation is a must-have skill to comprehend not only Algebra 1 but any secondary school math courses. And that is why I decided to make a graphing game!
 
 Graph It is an educational game designed to facilitate learning on graphing equations. It promotes engaging and positive learning experience where students can discover how graph works.
 
