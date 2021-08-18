@@ -1,19 +1,20 @@
 # Graph It
 
 ## Background
+As a math teacher, I found many students struggling with graphing linear equation. It is very unfortunate, because grahping linear equation is a must-have skill to comprehend not only Algebra 1 but any secondary school math courses. And that is why I decided to make a graphing game!
 
 Graph It is an educational game designed to facilitate learning on graphing equations. It promotes engaging and positive learning experience where students can discover how graph works.
 
-To win the game, a player must catch every star on the graph. A player can type in multiple equations to create lines on the graph. Once ready, press the car! The car will follow the line to catch stars on its way.
+To win the game, a player must catch every star on the graph. A player can type in a linear equation to create lines on the graph. Once ready, press the car! The car will follow the line to catch stars on its way.
 
 ## Functionality
-* Depend on difficulty level, the game generates different number of stars on the screen.
 * Given a linear equation, it graphs the line on a 2D cartesian coordinate system.
-* Player can type in any linear equation (up to 5 equations).
+* Player can type in any linear equation in slope-intercept form.
 * Reset button resets the equations and lines on the screen.
-* Instruction button displays the rules of the game.
+* Instruction button displays how to play the game.
 * Pressing the car image starts the car to follow the line on the screen.
-* When car catches every star, the game moves on to the next level.
+* Time attack mode starts a 1 minute timer. Try to collect as many stars as you can within a minute!
+* Leader-board updates everytime a player completes a time attack mode.
 
 ## Wireframes
 ![graph it wireframe](/graph_it_wireframe.png)
@@ -38,5 +39,6 @@ To win the game, a player must catch every star on the graph. A player can type 
 
 ## Bonus Features
 *	Implement more types of function such as logarithmic, quadratic, and exponential function.
-*	Create more levels.
-*	Keep track of minimum number of lines used in each level.
+*	Create level mode.
+*	Deduct points for incorrect answer.
+*	Create a 'Hint' button that shows how to find the slope and y-intercept in each case.
