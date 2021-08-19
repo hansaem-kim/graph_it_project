@@ -32,7 +32,7 @@ class Time{
             } else {
                 that.gameOver(askName);
             }
-        }, 200);
+        }, 1000);
     }
 
 
