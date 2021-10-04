@@ -1,5 +1,5 @@
 # Graph It
-### Live Site: [Graph It!](https://hansaem-kim.github.io/graph_it_project)
+### Live Site: [Graph It](https://hansaem-kim.github.io/graph_it_project)
 
 ## Background
 As a math teacher, I found many students struggling with graphing linear equation. It is very unfortunate, because graphing linear equation is a must-have skill to comprehend not only Algebra 1 but any secondary school math courses. And that is why I decided to make a graphing game!
