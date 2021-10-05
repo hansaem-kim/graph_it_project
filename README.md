@@ -26,6 +26,10 @@ To win the game, a player must catch every star on the graph. A player can type 
 *	Canvas for graphics and animation.
 *	Webpack for module bundler.
 
+## Code Snippets
+![Screenshot](/drawing_line_code.png)
+![Screenshot](/generate_star_code.png)
+
 ## Implementation Timeline
 ###	Friday 
 * Review Canvas. 

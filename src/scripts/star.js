@@ -15,15 +15,19 @@ class Star {
         const dx = this.starPos[1][0] - this.starPos[0][0];
         const dy = this.starPos[1][1] - this.starPos[0][1];
 
+        //generate positions of three stars and ensure they are positioned within the graph.
         while (this.starPos.length < 3){
-            if (this.starPos[this.starPos.length-1][0] > 15 || this.starPos[this.starPos.length-1][1] < 0 || this.starPos[this.starPos.length-1][1] > 11) {
-                this.starPos.pop();
-                break;
-            } 
+            if (this.starPos[this.starPos.length-1][0] > 15 || 
+                this.starPos[this.starPos.length-1][1] < 0 || 
+                this.starPos[this.starPos.length-1][1] > 11) {
+                    this.starPos.pop();
+                    break;
+            }
             this.starPos.push([this.starPos[this.starPos.length-1][0] + dx, this.starPos[this.starPos.length-1][1] + dy]);
             
         }
 
+        //draw stars on linear positions.
         this.starPos.forEach(pos => {
             this.ctx.drawImage(img, pos[0]*50 -10, pos[1]*50 -10, 20, 20);
         })
